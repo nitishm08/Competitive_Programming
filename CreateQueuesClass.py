@@ -1,4 +1,4 @@
-class createques():
+class createqueues():
 
   def __init__(self):
     self.enter=[]
