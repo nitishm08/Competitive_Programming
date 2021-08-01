@@ -13,3 +13,23 @@ def bubblesort(nums):
       j+=1
     i+=1
   return nums
+
+#Selection Sort
+
+def selectionsort(nums):
+
+  length=len(nums)-1
+
+  for i in range(length):
+    minnumber=i
+    j=i+1
+    temp=nums[i]
+    while j<= length:
+      if nums[j]<nums[minnumber]:
+        minnumber=j
+      j+=1
+    nums[i]=nums[minnumber]
+    nums[minnumber]=temp
+    i+=1
+
+  return nums
