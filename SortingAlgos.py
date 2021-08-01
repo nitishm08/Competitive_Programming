@@ -50,3 +50,37 @@ def insertionsort(nums):
     nums[j+1]=temp
 
   return nums
+
+#MERGE SORT
+
+import math
+def mergesort(nums):
+
+  if len(nums)==1:
+    return nums
+
+  length=len(nums)
+  middle=math.floor(length/2)
+  left=nums[0:middle]
+  right=nums[middle:]
+
+  return merge(
+      mergesort(left),
+      mergesort(right)
+  )
+
+def merge(left,right):
+  result=[]
+  leftindex=0
+  rightindex=0
+
+  while leftindex<len(left) and rightindex<len(right):
+    if left[leftindex]<right[rightindex]:
+      result.append(left[leftindex])
+      leftindex+=1
+
+    else:
+      result.append(right[rightindex])
+      rightindex+=1
+
+  return result + left[leftindex:] + right[rightindex:]
